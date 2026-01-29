@@ -1,11 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Megaphone, Printer, Tv, Clapperboard, Award, Users, Map, PenTool, X } from "lucide-react";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "Our Services | Architects of Influence",
-    description: "Discover the elite service suite of Garvik India. From cinematic ad films and broadcast media to 360° brand management and large-scale corporate summits.",
-};
 
 // Updated service list based on Screenshot + User Request
 const services = [
