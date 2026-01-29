@@ -1,12 +1,9 @@
+"use client";
+
+import { useState } from "react";
 import { portfolioItems } from "@/lib/portfolio-data";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-    title: "Portfolio | The Excellence Archive",
-    description: "Explore the sovereign portfolio of Garvik India. A cinematic showcase of industry-defining events, broadcast media, and digital transformations.",
-};
 
 const categories = ["All", "Events", "Ad Films", "Outdoor", "Road Show"];
 
