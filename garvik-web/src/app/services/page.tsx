@@ -1,8 +1,11 @@
-"use client";
-
-import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Megaphone, Printer, Tv, Clapperboard, Award, Users, Map, PenTool, ArrowRight, X } from "lucide-react";
+import { Megaphone, Printer, Tv, Clapperboard, Award, Users, Map, PenTool, X } from "lucide-react";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Services | Architects of Influence",
+    description: "Discover the elite service suite of Garvik India. From cinematic ad films and broadcast media to 360° brand management and large-scale corporate summits.",
+};
 
 // Updated service list based on Screenshot + User Request
 const services = [
@@ -68,37 +71,50 @@ export default function ServicesPage() {
     const [selectedId, setSelectedId] = useState<number | null>(null);
 
     return (
-        <div className="bg-black min-h-screen pb-20 text-white">
-            <section className="bg-gradient-to-b from-orange-600 to-black py-32 px-4 text-center">
-                <h1 className="text-5xl md:text-7xl font-black mb-6 uppercase">Our Expertise</h1>
-                <p className="max-w-2xl mx-auto text-xl text-orange-100/90 font-light">
-                    Delivering excellence in Events, Advertising, and Production.
-                </p>
+        <div className="bg-black min-h-screen text-white pt-20">
+            {/* Extraordinary Hero */}
+            <section className="relative py-32 px-4 text-center overflow-hidden border-b border-white/5">
+                <div className="absolute inset-0 z-0 bg-mesh opacity-20" />
+                <div className="container relative z-10 mx-auto">
+                    <motion.span
+                        initial={{ opacity: 0, letterSpacing: "0.1em" }}
+                        animate={{ opacity: 1, letterSpacing: "0.5em" }}
+                        className="text-gold font-black uppercase text-xs mb-6 block"
+                    >
+                        The Pillars of Dominance
+                    </motion.span>
+                    <h1 className="text-7xl md:text-9xl font-black mb-10 uppercase tracking-tighter leading-none italic">
+                        Our <span className="text-gradient-purple">Expertise</span>
+                    </h1>
+                    <p className="max-w-3xl mx-auto text-xl md:text-2xl text-gray-400 font-light leading-relaxed tracking-wide italic">
+                        &quot;Mastery in variety, excellence in consistency.&quot; Delivering industry-leading results in Events, Advertising, and cinematic Production.
+                    </p>
+                </div>
             </section>
 
-            <div className="container mx-auto px-4 md:px-8 -mt-20 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="container mx-auto px-4 md:px-8 -mt-24 relative z-10 mb-32">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service) => (
                         <motion.div
                             key={service.id}
                             layoutId={`card-${service.id}`}
                             onClick={() => setSelectedId(service.id)}
-                            className="group cursor-pointer bg-neutral-900 rounded-none border border-neutral-800 p-8 hover:bg-neutral-800 transition-all hover:border-secondary relative overflow-hidden"
-                            whileHover={{ y: -5 }}
+                            className="group cursor-pointer glass-dark border border-white/5 p-10 hover:border-gold transition-all duration-500 relative overflow-hidden"
+                            whileHover={{ y: -10 }}
                         >
-                            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <service.icon size={100} />
+                            <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
+                                <service.icon size={120} />
                             </div>
 
-                            <div className="w-12 h-12 bg-secondary/10 rounded-sm flex items-center justify-center mb-6 text-secondary group-hover:bg-secondary group-hover:text-black transition-colors">
-                                <service.icon size={24} />
+                            <div className="w-16 h-16 border border-gold/20 flex items-center justify-center mb-8 text-gold group-hover:bg-gold group-hover:text-black transition-all duration-500">
+                                <service.icon size={28} />
                             </div>
-                            <motion.h3 layoutId={`title-${service.id}`} className="text-xl font-bold mb-2 text-white uppercase tracking-wide">
+                            <motion.h3 layoutId={`title-${service.id}`} className="text-2xl font-black mb-4 text-white uppercase tracking-tighter italic">
                                 {service.title}
                             </motion.h3>
-                            <p className="text-gray-400 text-sm">{service.short}</p>
+                            <p className="text-gray-400 text-sm font-light leading-relaxed tracking-wide italic">{service.short}</p>
 
-                            <div className="mt-6 w-full h-0.5 bg-neutral-800 group-hover:bg-secondary transition-colors" />
+                            <div className="mt-8 w-12 h-[2px] bg-gold/30 group-hover:w-full transition-all duration-700" />
                         </motion.div>
                     ))}
                 </div>
@@ -106,15 +122,15 @@ export default function ServicesPage() {
 
             <AnimatePresence>
                 {selectedId && (
-                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-lg" onClick={() => setSelectedId(null)}>
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/90 backdrop-blur-2xl" onClick={() => setSelectedId(null)}>
                         <motion.div
                             layoutId={`card-${selectedId}`}
-                            className="bg-neutral-900 w-full max-w-2xl rounded-sm border border-secondary p-8 md:p-12 relative shadow-2xl"
+                            className="glass-dark w-full max-w-3xl border border-gold/30 p-12 md:p-20 relative shadow-[0_0_100px_rgba(212,175,55,0.1)]"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
                                 onClick={() => setSelectedId(null)}
-                                className="absolute top-6 right-6 p-2 rounded-full bg-black hover:text-secondary transition-colors text-white"
+                                className="absolute top-8 right-8 p-3 bg-white/5 hover:bg-gold hover:text-black transition-all text-white border border-white/10"
                             >
                                 <X size={24} />
                             </button>
@@ -123,28 +139,29 @@ export default function ServicesPage() {
                                 const service = services.find(s => s.id === selectedId)!;
                                 return (
                                     <>
-                                        <div className="flex items-center gap-4 mb-8">
-                                            <div className="w-16 h-16 bg-secondary text-black flex items-center justify-center rounded-sm">
-                                                <service.icon size={32} />
+                                        <div className="flex items-center gap-8 mb-12">
+                                            <div className="w-20 h-20 bg-gold text-black flex items-center justify-center border border-gold shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                                                <service.icon size={40} />
                                             </div>
-                                            <motion.h3 layoutId={`title-${service.id}`} className="text-3xl font-bold text-white uppercase">
+                                            <motion.h3 layoutId={`title-${service.id}`} className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter italic">
                                                 {service.title}
                                             </motion.h3>
                                         </div>
 
                                         <motion.div
-                                            initial={{ opacity: 0 }}
-                                            animate={{ opacity: 1 }}
+                                            initial={{ opacity: 0, y: 20 }}
+                                            animate={{ opacity: 1, y: 0 }}
                                             transition={{ delay: 0.2 }}
                                         >
-                                            <p className="text-lg text-gray-300 leading-relaxed mb-8 border-l-4 border-secondary pl-6">
+                                            <p className="text-2xl text-gray-300 leading-relaxed mb-12 border-l-4 border-gold pl-10 font-light italic">
                                                 {service.full}
                                             </p>
                                             <button
                                                 onClick={() => setSelectedId(null)}
-                                                className="px-8 py-3 bg-secondary text-black font-bold uppercase hover:bg-white transition-colors tracking-wider"
+                                                className="group relative px-10 py-5 bg-white text-black font-black uppercase tracking-[0.3em] text-xs transition-all hover:bg-gold hover:text-black shadow-[0_0_20px_rgba(255,255,255,0.1)]"
                                             >
-                                                Close Details
+                                                <span className="relative z-10">Initiate Project</span>
+                                                <div className="absolute inset-0 bg-gold-shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
                                             </button>
                                         </motion.div>
                                     </>
@@ -157,3 +174,4 @@ export default function ServicesPage() {
         </div>
     );
 }
+
