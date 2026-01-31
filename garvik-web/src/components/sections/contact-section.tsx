@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { motion } from "framer-motion";
 import { ChevronUp, Mail, MapPin, Phone, Loader2, CheckCircle, AlertCircle, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Disclosure, Transition } from "@headlessui/react";
 
