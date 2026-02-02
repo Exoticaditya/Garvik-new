@@ -1,0 +1,27 @@
+{
+    "name": "Garvik India - Premium Creative Agency",
+    "short_name": "Garvik India",
+    "description": "Premium creative agency specializing in cinematic advertising, branding, and digital marketing.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0a0a0a",
+    "theme_color": "#D4AF37",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "categories": ["business", "marketing", "advertising"],
+    "icons": [
+        {
+            "src": "/logo.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/logo.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ]
+}
