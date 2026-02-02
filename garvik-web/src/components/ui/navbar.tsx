@@ -29,17 +29,17 @@ export function Navbar() {
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
                 scrolled
-                    ? "bg-black/60 backdrop-blur-xl py-4 border-b border-gold/20 shadow-[0_10px_30px_-10px_rgba(145,38,143,0.3)]"
-                    : "bg-transparent py-8"
+                    ? "bg-black/60 backdrop-blur-xl py-2 border-b border-gold/20 shadow-[0_10px_30px_-10px_rgba(145,38,143,0.3)]"
+                    : "bg-transparent py-4"
             )}
         >
-            <div className="container mx-auto px-4 md:px-8 flex items-center justify-between">
+            <div className="container mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between gap-4">
                 <ScrollLink to="home" smooth={true} duration={800} className="cursor-pointer z-50">
                     <Logo />
                 </ScrollLink>
 
                 {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center space-x-12">
+                <div className="hidden lg:flex items-center space-x-8 xl:space-x-12">
                     {links.map((link) => (
                         <ScrollLink
                             key={link.to}
@@ -49,7 +49,7 @@ export function Navbar() {
                             offset={-80}
                             duration={800}
                             activeClass="text-gold before:w-full"
-                            className="relative text-xs font-black uppercase tracking-[0.3em] text-white/70 hover:text-white cursor-pointer transition-all group lg:text-xs"
+                            className="relative text-[10px] xl:text-xs font-black uppercase tracking-[0.2em] xl:tracking-[0.3em] text-white/70 hover:text-white cursor-pointer transition-all group"
                         >
                             {link.label}
                             <span className="absolute -bottom-2 left-0 w-0 h-[1px] bg-gradient-to-r from-primary to-gold transition-all duration-500 group-hover:w-full"></span>

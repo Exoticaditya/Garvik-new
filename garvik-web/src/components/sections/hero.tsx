@@ -21,7 +21,7 @@ export function Hero() {
                 <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[140px] animation-delay-2000" />
             </div>
 
-            <div className="container relative z-20 px-4 md:px-6 mt-8">
+            <div className="container relative z-20 px-4 md:px-6 mt-20 md:mt-24 lg:mt-28">
                 <div className="flex flex-col items-center text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 50 }}
@@ -33,10 +33,10 @@ export function Hero() {
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ delay: 0.2, duration: 0.5 }}
-                            className="inline-flex items-center gap-3 px-6 py-2 mb-10 border border-white/10 rounded-full glass backdrop-blur-md shadow-2xl"
+                            className="inline-flex items-center gap-2 md:gap-3 px-4 md:px-6 py-2 mb-8 md:mb-10 border border-white/10 rounded-full glass backdrop-blur-md shadow-2xl"
                         >
                             <span className="w-2 h-2 rounded-full bg-gold animate-pulse shadow-[0_0_15px_#D4AF37]" />
-                            <span className="text-white font-bold uppercase tracking-[0.3em] text-[10px] md:text-sm">
+                            <span className="text-white font-bold uppercase tracking-[0.15em] md:tracking-[0.3em] text-[8px] md:text-sm whitespace-nowrap">
                                 Premium Creative Agency
                             </span>
                         </motion.div>
