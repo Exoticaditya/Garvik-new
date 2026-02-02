@@ -2,63 +2,62 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Megaphone, Printer, Tv, Clapperboard, Award, Users, Map, PenTool, X } from "lucide-react";
 
-// Updated service list based on Screenshot + User Request
+// Updated service list with Font Awesome icons
 const services = [
     {
         id: 1,
         title: "Integrated Brand Mgmt",
-        icon: Megaphone,
+        icon: "fa-solid fa-bullhorn",
         short: "360° Brand Strategy",
         full: "Complete brand lifecycle management from identity creation to market positioning. We ensure your brand speaks one coherent language across all platforms.",
     },
     {
         id: 2,
         title: "Broadcast Advertising",
-        icon: Tv,
+        icon: "fa-solid fa-tv",
         short: "TV & Radio Commercials",
         full: "High-impact television and radio commercials. We handle media buying, slot management, and creative direction to reach millions.",
     },
     {
         id: 3,
         title: "Print Media",
-        icon: Printer,
+        icon: "fa-solid fa-print",
         short: "Newspapers & Magazines",
         full: "Traditional print advertising remains a powerhouse. We design and place compelling ads in top-tier newspapers and magazines.",
     },
     {
         id: 4,
         title: "Ad Films",
-        icon: Clapperboard,
+        icon: "fa-solid fa-clapperboard",
         short: "Corporate Films & TVC",
         full: "End-to-end production of corporate films, TV commercials, and digital video content that tells your brand's story visually.",
     },
     {
         id: 5,
         title: "PR / Felicitations",
-        icon: Award,
+        icon: "fa-solid fa-award",
         short: "Public Relations Events",
         full: "Managing reputation and media relations through strategic PR events, press conferences, and award felicitation ceremonies.",
     },
     {
         id: 6,
         title: "Business Conferences",
-        icon: Users,
+        icon: "fa-solid fa-users",
         short: "Corporate Meets & Summits",
         full: "Seamless execution of large-scale business conferences, summits, and dealer meets with premium hospitality and logistics.",
     },
     {
         id: 7,
         title: "Product Road Show",
-        icon: Map,
+        icon: "fa-solid fa-map-location-dot",
         short: "BTL Activations",
         full: "Taking your product to the consumer. We organize multi-city road shows and van activations for direct consumer engagement.",
     },
     {
         id: 8,
         title: "Creative Design",
-        icon: PenTool,
+        icon: "fa-solid fa-pen-ruler",
         short: "Visual Identity & Content",
         full: "World-class graphic design, logo creation, and content writing services to support all your marketing collateral.",
     },
@@ -100,11 +99,11 @@ export default function ServicesPage() {
                             whileHover={{ y: -10 }}
                         >
                             <div className="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity">
-                                <service.icon size={120} />
+                                <i className={`${service.icon} text-[120px]`}></i>
                             </div>
 
                             <div className="w-16 h-16 border border-gold/20 flex items-center justify-center mb-8 text-gold group-hover:bg-gold group-hover:text-black transition-all duration-500">
-                                <service.icon size={28} />
+                                <i className={`${service.icon} text-2xl`}></i>
                             </div>
                             <motion.h3 layoutId={`title-${service.id}`} className="text-2xl font-black mb-4 text-white uppercase tracking-tighter italic">
                                 {service.title}
@@ -128,8 +127,9 @@ export default function ServicesPage() {
                             <button
                                 onClick={() => setSelectedId(null)}
                                 className="absolute top-8 right-8 p-3 bg-white/5 hover:bg-gold hover:text-black transition-all text-white border border-white/10"
+                                aria-label="Close"
                             >
-                                <X size={24} />
+                                <i className="fa-solid fa-xmark text-2xl"></i>
                             </button>
 
                             {(() => {
@@ -138,7 +138,7 @@ export default function ServicesPage() {
                                     <>
                                         <div className="flex items-center gap-8 mb-12">
                                             <div className="w-20 h-20 bg-gold text-black flex items-center justify-center border border-gold shadow-[0_0_30px_rgba(212,175,55,0.3)]">
-                                                <service.icon size={40} />
+                                                <i className={`${service.icon} text-4xl`}></i>
                                             </div>
                                             <motion.h3 layoutId={`title-${service.id}`} className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter italic">
                                                 {service.title}

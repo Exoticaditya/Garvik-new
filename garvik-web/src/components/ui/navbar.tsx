@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Link as ScrollLink } from "react-scroll";
-import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { Logo } from "@/components/ui/logo";
@@ -71,16 +70,13 @@ export function Navbar() {
                 <button
                     className="lg:hidden p-2 text-white z-50 relative group"
                     onClick={() => setIsOpen(!isOpen)}
+                    aria-label={isOpen ? "Close menu" : "Open menu"}
                 >
-                    <div className="relative">
+                    <div className="relative text-2xl">
                         {isOpen ? (
-                            <X size={32} className="text-gold" />
+                            <i className="fa-solid fa-xmark text-gold"></i>
                         ) : (
-                            <div className="flex flex-col gap-1.5 items-end">
-                                <div className="w-8 h-[2px] bg-white group-hover:bg-gold transition-colors" />
-                                <div className="w-6 h-[2px] bg-white group-hover:bg-primary transition-colors" />
-                                <div className="w-4 h-[2px] bg-white group-hover:bg-gold transition-colors" />
-                            </div>
+                            <i className="fa-solid fa-bars group-hover:text-gold transition-colors"></i>
                         )}
                     </div>
                 </button>

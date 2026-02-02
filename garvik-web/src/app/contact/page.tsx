@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Disclosure, Transition } from "@headlessui/react";
-import { ChevronUp, Mail, MapPin, Phone, Loader2, CheckCircle, AlertCircle, ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 type FormData = {
@@ -82,7 +81,7 @@ export default function ContactPage() {
                         <div className="space-y-6 mb-12">
                             <div className="flex items-start space-x-4">
                                 <div className="bg-neutral-800 p-3 text-secondary">
-                                    <MapPin className="w-6 h-6" />
+                                    <i className="fa-solid fa-location-dot text-xl"></i>
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg text-white uppercase">Visit Us</h3>
@@ -91,7 +90,7 @@ export default function ContactPage() {
                             </div>
                             <div className="flex items-start space-x-4">
                                 <div className="bg-neutral-800 p-3 text-secondary">
-                                    <Phone className="w-6 h-6" />
+                                    <i className="fa-solid fa-phone text-xl"></i>
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg text-white uppercase">Call Us</h3>
@@ -100,7 +99,7 @@ export default function ContactPage() {
                             </div>
                             <div className="flex items-start space-x-4">
                                 <div className="bg-neutral-800 p-3 text-secondary">
-                                    <Mail className="w-6 h-6" />
+                                    <i className="fa-solid fa-envelope text-xl"></i>
                                 </div>
                                 <div>
                                     <h3 className="font-bold text-lg text-white uppercase">Email Us</h3>
@@ -149,18 +148,18 @@ export default function ContactPage() {
                                 disabled={isSubmitting}
                                 className="w-full flex items-center justify-center py-4 px-6 text-black bg-secondary hover:bg-white font-bold uppercase tracking-wider transition-all disabled:opacity-70 disabled:cursor-not-allowed"
                             >
-                                {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "Send Message"}
+                                {isSubmitting ? <i className="fa-solid fa-spinner fa-spin text-xl"></i> : "Send Message"}
                             </button>
 
                             {status === "success" && (
                                 <div className="flex items-center gap-2 text-green-400 bg-green-900/20 p-4 border border-green-900">
-                                    <CheckCircle className="w-5 h-5" />
+                                    <i className="fa-solid fa-circle-check text-xl"></i>
                                     <span>Message sent successfully!</span>
                                 </div>
                             )}
                             {status === "error" && (
                                 <div className="flex items-center gap-2 text-red-400 bg-red-900/20 p-4 border border-red-900">
-                                    <AlertCircle className="w-5 h-5" />
+                                    <i className="fa-solid fa-circle-exclamation text-xl"></i>
                                     <span>Error sending message.</span>
                                 </div>
                             )}
@@ -189,10 +188,7 @@ export default function ContactPage() {
                                         <>
                                             <Disclosure.Button className="flex justify-between w-full px-6 py-4 text-left text-sm font-bold text-white hover:bg-neutral-800 focus:outline-none transition-colors uppercase">
                                                 <span className="text-base">{faq.question}</span>
-                                                <ChevronUp
-                                                    className={`${open ? 'transform rotate-180' : ''
-                                                        } w-5 h-5 text-secondary transition-transform duration-200`}
-                                                />
+                                                <i className={`fa-solid fa-chevron-up text-secondary transition-transform duration-200 ${open ? 'rotate-180' : ''}`}></i>
                                             </Disclosure.Button>
                                             <Transition
                                                 enter="transition duration-100 ease-out"

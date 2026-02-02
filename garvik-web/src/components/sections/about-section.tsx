@@ -1,13 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Users, Calendar, Award } from "lucide-react";
-import { GlassCard } from "../ui/glass-card";
 
 const metrics = [
-    { label: "Successful Events", value: "350+", icon: Calendar },
-    { label: "Corporate Clients", value: "100+", icon: Users },
-    { label: "Industry Awards", value: "15+", icon: Award },
+    { label: "Successful Events", value: "350+", icon: "fa-solid fa-calendar-check" },
+    { label: "Corporate Clients", value: "100+", icon: "fa-solid fa-users" },
+    { label: "Industry Awards", value: "15+", icon: "fa-solid fa-trophy" },
 ];
 
 export function AboutSection() {
@@ -55,7 +53,7 @@ export function AboutSection() {
                                 className="flex items-center gap-10 p-10 glass-dark border-l-4 border-gold group hover:border-primary transition-all duration-500"
                             >
                                 <div className="text-gold bg-gold/5 p-5 border border-gold/10 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-500">
-                                    <metric.icon size={36} />
+                                    <i className={`${metric.icon} text-4xl`}></i>
                                 </div>
                                 <div>
                                     <div className="text-5xl font-black text-white tracking-tighter mb-1">{metric.value}</div>

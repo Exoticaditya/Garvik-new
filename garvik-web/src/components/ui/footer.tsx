@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail } from "lucide-react";
 import { Logo } from "./logo";
 
 export function Footer() {
@@ -31,19 +30,19 @@ export function Footer() {
                         <div className="space-y-6">
                             <div className="flex items-start space-x-4 group cursor-pointer">
                                 <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center group-hover:border-primary transition-all duration-500">
-                                    <MapPin className="w-4 h-4 text-primary" />
+                                    <i className="fa-solid fa-location-dot text-primary"></i>
                                 </div>
                                 <span className="text-gray-400 group-hover:text-white transition-colors pt-2">Noida, Uttar Pradesh, India</span>
                             </div>
                             <div className="flex items-center space-x-4 group cursor-pointer">
                                 <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center group-hover:border-gold transition-all duration-500">
-                                    <Phone className="w-4 h-4 text-gold" />
+                                    <i className="fa-solid fa-phone text-gold"></i>
                                 </div>
                                 <span className="text-gray-400 group-hover:text-white transition-colors">+91 98765 43210</span>
                             </div>
                             <div className="flex items-center space-x-4 group cursor-pointer">
                                 <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center group-hover:border-primary transition-all duration-500">
-                                    <Mail className="w-4 h-4 text-primary" />
+                                    <i className="fa-solid fa-envelope text-primary"></i>
                                 </div>
                                 <span className="text-gray-400 group-hover:text-white transition-colors">contact@garvikindia.com</span>
                             </div>

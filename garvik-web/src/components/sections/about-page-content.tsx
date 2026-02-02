@@ -1,7 +1,6 @@
 "use client";
 
 import { Timeline } from "@/components/ui/timeline";
-import { Target, Heart, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const timelineData = [
@@ -38,17 +37,17 @@ export function AboutPageContent() {
             <section className="py-32 container mx-auto px-4 md:px-8 border-t border-white/5">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-32">
                     <div className="p-12 glass-dark border-l-2 border-gold hover:border-primary transition-all duration-500 group">
-                        <Target className="w-12 h-12 text-gold mb-8 group-hover:scale-110 transition-transform" />
+                        <i className="fa-solid fa-bullseye text-4xl text-gold mb-8 group-hover:scale-110 transition-transform block"></i>
                         <h3 className="text-2xl font-black mb-6 uppercase tracking-widest text-white group-hover:text-gold transition-colors">Vision</h3>
                         <p className="text-gray-400 font-light leading-relaxed group-hover:text-gray-300 transition-colors">To be the sovereign architects of brand identity in India, recognized for transforming ordinary businesses into extraordinary legacies.</p>
                     </div>
                     <div className="p-12 glass-dark border-l-2 border-primary hover:border-gold transition-all duration-500 group">
-                        <Zap className="w-12 h-12 text-primary mb-8 group-hover:scale-110 transition-transform" />
+                        <i className="fa-solid fa-bolt text-4xl text-primary mb-8 group-hover:scale-110 transition-transform block"></i>
                         <h3 className="text-2xl font-black mb-6 uppercase tracking-widest text-white group-hover:text-primary transition-colors">Mission</h3>
                         <p className="text-gray-400 font-light leading-relaxed group-hover:text-gray-300 transition-colors">To deliver high-impact, cinematic advertising solutions that accelerate growth and build permanent brand value for our partners.</p>
                     </div>
                     <div className="p-12 glass-dark border-l-2 border-gold hover:border-primary transition-all duration-500 group">
-                        <Heart className="w-12 h-12 text-gold mb-8 group-hover:scale-110 transition-transform" />
+                        <i className="fa-solid fa-heart text-4xl text-gold mb-8 group-hover:scale-110 transition-transform block"></i>
                         <h3 className="text-2xl font-black mb-6 uppercase tracking-widest text-white group-hover:text-gold transition-colors">Core</h3>
                         <p className="text-gray-400 font-light leading-relaxed group-hover:text-gray-300 transition-colors">Creative audacity, strategic integrity, and a relentless focus on our clients&apos; success are the heartbeats of our agency.</p>
                     </div>

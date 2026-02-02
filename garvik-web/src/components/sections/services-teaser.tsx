@@ -1,22 +1,21 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Clapperboard, Users, Map, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const services = [
     {
-        icon: Clapperboard,
+        icon: "fa-solid fa-clapperboard",
         title: "Ad Film Production",
         description: "Cinematic corporate films and TV commercials."
     },
     {
-        icon: Users,
+        icon: "fa-solid fa-users",
         title: "Corporate Events",
         description: "Product launches, conferences, and meets."
     },
     {
-        icon: Map,
+        icon: "fa-solid fa-map-location-dot",
         title: "Road Shows",
         description: "Pan-India promotional van activations."
     }
@@ -34,7 +33,7 @@ export function ServicesTeaser() {
                         </h2>
                     </div>
                     <Link href="/services" className="group flex items-center gap-2 text-lg font-semibold border-b-2 border-secondary pb-1 hover:text-secondary transition-colors">
-                        View All Services <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                        View All Services <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                     </Link>
                 </div>
 
@@ -49,7 +48,7 @@ export function ServicesTeaser() {
                             className="p-8 bg-neutral-900 border-l-4 border-transparent hover:border-secondary transition-all hover:bg-neutral-800"
                         >
                             <div className="mb-6 text-secondary">
-                                <service.icon size={40} strokeWidth={1.5} />
+                                <i className={`${service.icon} text-4xl`}></i>
                             </div>
                             <h3 className="text-2xl font-bold mb-3 uppercase">{service.title}</h3>
                             <p className="text-gray-400 leading-relaxed mb-6">{service.description}</p>

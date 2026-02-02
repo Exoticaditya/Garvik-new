@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Link as ScrollLink } from "react-scroll";
-import { ArrowRight, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function Hero() {
@@ -66,7 +65,7 @@ export function Hero() {
                                 className="group relative px-10 py-5 bg-gold text-black font-black text-lg uppercase tracking-[0.2em] rounded-none transition-all hover:-translate-y-1 hover:shadow-[20px_20px_0px_rgba(145,38,143,0.3)] cursor-pointer"
                             >
                                 <span className="relative z-10 flex items-center gap-3">
-                                    Explore Legacies <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                                    Explore Legacies <i className="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                                 </span>
                             </ScrollLink>
 
@@ -77,7 +76,7 @@ export function Hero() {
                                 className="group px-10 py-5 text-white font-bold text-lg uppercase tracking-[0.2em] transition-all flex items-center gap-4 cursor-pointer hover:text-gold"
                             >
                                 <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:border-gold group-hover:bg-gold/5 transition-all duration-500">
-                                    <Play className="w-5 h-5 fill-current ml-1 transition-transform group-hover:scale-125" />
+                                    <i className="fa-solid fa-play ml-1 transition-transform group-hover:scale-125"></i>
                                 </div>
                                 The Vision
                             </ScrollLink>

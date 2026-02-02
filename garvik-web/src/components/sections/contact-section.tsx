@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
-import { ChevronUp, Mail, MapPin, Phone, Loader2, CheckCircle, AlertCircle, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { Disclosure, Transition } from "@headlessui/react";
 
 type FormData = {
@@ -115,7 +114,7 @@ export function ContactSection() {
                                 className="group relative w-full py-6 px-10 bg-white text-black font-black uppercase tracking-[0.4em] text-xs transition-all hover:bg-gold hover:text-black overflow-hidden"
                             >
                                 <span className="relative z-10 flex items-center justify-center gap-4">
-                                    {isSubmitting ? <Loader2 className="w-5 h-5 animate-spin" /> : "Initiate Brief"}
+                                    {isSubmitting ? <i className="fa-solid fa-spinner fa-spin text-lg"></i> : "Initiate Brief"}
                                 </span>
                                 <div className="absolute inset-0 bg-gold-shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
                             </button>
@@ -126,7 +125,7 @@ export function ContactSection() {
                                     animate={{ opacity: 1, y: 0 }}
                                     className="flex items-center gap-4 text-gold bg-gold/5 p-6 border border-gold/20"
                                 >
-                                    <CheckCircle className="w-6 h-6" />
+                                    <i className="fa-solid fa-circle-check text-2xl"></i>
                                     <span className="text-sm font-black uppercase tracking-widest">Communication Received. The Architects will reach out.</span>
                                 </motion.div>
                             )}
@@ -140,7 +139,7 @@ export function ContactSection() {
                             <div className="space-y-10">
                                 <div className="flex items-start gap-8 group cursor-pointer transition-all">
                                     <div className="w-16 h-16 border border-white/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black group-hover:border-gold transition-all duration-500">
-                                        <MapPin size={28} />
+                                        <i className="fa-solid fa-location-dot text-2xl"></i>
                                     </div>
                                     <div>
                                         <h4 className="text-gray-600 text-[10px] font-black uppercase tracking-[0.4em] mb-2">Primary Hub</h4>
@@ -151,7 +150,7 @@ export function ContactSection() {
                                 </div>
                                 <div className="flex items-start gap-8 group cursor-pointer transition-all">
                                     <div className="w-16 h-16 border border-white/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-black group-hover:border-gold transition-all duration-500">
-                                        <Phone size={28} />
+                                        <i className="fa-solid fa-phone text-2xl"></i>
                                     </div>
                                     <div>
                                         <h4 className="text-gray-600 text-[10px] font-black uppercase tracking-[0.4em] mb-2">Voice Comms</h4>
@@ -162,9 +161,14 @@ export function ContactSection() {
                         </div>
 
                         <div className="flex gap-6">
-                            {[Instagram, Linkedin, Twitter, Facebook].map((Icon, i) => (
-                                <a key={i} href="#" className="w-16 h-16 border border-white/5 flex items-center justify-center text-white hover:bg-gold hover:text-black hover:border-gold transition-all duration-500 group relative overflow-hidden">
-                                    <Icon size={22} className="relative z-10 group-hover:scale-110 transition-transform" />
+                            {[
+                                { icon: "fa-brands fa-instagram", url: "https://instagram.com/garvikindia" },
+                                { icon: "fa-brands fa-linkedin-in", url: "https://linkedin.com/company/garvikindia" },
+                                { icon: "fa-brands fa-x-twitter", url: "https://twitter.com/garvikindia" },
+                                { icon: "fa-brands fa-facebook-f", url: "https://facebook.com/garvikindia" }
+                            ].map((social, i) => (
+                                <a key={i} href={social.url} target="_blank" rel="noopener noreferrer" aria-label="Social media link" className="w-16 h-16 border border-white/5 flex items-center justify-center text-white hover:bg-gold hover:text-black hover:border-gold transition-all duration-500 group relative overflow-hidden">
+                                    <i className={`${social.icon} text-xl relative z-10 group-hover:scale-110 transition-transform`}></i>
                                     <div className="absolute inset-0 bg-gradient-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                                 </a>
                             ))}
@@ -178,10 +182,7 @@ export function ContactSection() {
                                         <>
                                             <Disclosure.Button className="flex justify-between w-full text-left focus:outline-none group">
                                                 <span className="text-base font-black text-gray-400 group-hover:text-gold transition-colors uppercase tracking-[0.2em]">{faq.question}</span>
-                                                <ChevronUp
-                                                    className={`${open ? 'transform rotate-180' : ''
-                                                        } w-5 h-5 text-gray-600 group-hover:text-gold transition-all duration-300`}
-                                                />
+                                                <i className={`fa-solid fa-chevron-up text-gray-600 group-hover:text-gold transition-all duration-300 ${open ? 'rotate-180' : ''}`}></i>
                                             </Disclosure.Button>
                                             <Transition
                                                 enter="transition duration-500 ease-out"

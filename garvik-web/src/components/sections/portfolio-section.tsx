@@ -4,8 +4,6 @@ import { useState } from "react";
 import { portfolioItems } from "@/lib/portfolio-data";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
-import { GlassCard } from "@/components/ui/glass-card";
 
 const categories = ["All", "Events", "Ad Films", "Outdoor", "Road Show"];
 
@@ -77,7 +75,7 @@ export function PortfolioSection() {
                                 <div className="p-12 md:p-20 flex flex-col justify-center relative bg-white/[0.02]">
                                     <div className="absolute top-12 right-12">
                                         <div className="w-14 h-14 rounded-none border border-white/10 flex items-center justify-center group-hover:bg-gold group-hover:text-black transition-all duration-500">
-                                            <ArrowUpRight size={24} />
+                                            <i className="fa-solid fa-arrow-up-right-from-square text-xl"></i>
                                         </div>
                                     </div>
                                     <span className="text-gold font-black tracking-[0.4em] uppercase text-[10px] mb-6">Flagship Venture</span>

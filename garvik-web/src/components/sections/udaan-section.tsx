@@ -2,7 +2,6 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
 
 export function UdaanSection() {
@@ -39,7 +38,7 @@ export function UdaanSection() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-90" />
 
                                 <div className="absolute top-10 right-10 p-5 glass-dark border border-white/10 group-hover:border-gold transition-all duration-500">
-                                    <Star className="text-gold w-8 h-8 fill-gold animate-pulse" />
+                                    <i className="fa-solid fa-star text-gold text-3xl animate-pulse"></i>
                                 </div>
 
                                 <div className="absolute bottom-10 left-10 right-10">
@@ -78,7 +77,7 @@ export function UdaanSection() {
                         <div className="flex flex-col sm:flex-row gap-8 justify-center lg:justify-start pt-10">
                             <button className="group relative px-10 py-5 bg-white text-black font-black uppercase tracking-[0.3em] text-xs transition-all hover:bg-gold hover:text-black">
                                 <span className="relative z-10 flex items-center gap-4">
-                                    Experience Udaan <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
+                                    Experience Udaan <i className="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                                 </span>
                                 <div className="absolute inset-0 bg-gold-shimmer opacity-0 group-hover:opacity-100 transition-opacity" />
                             </button>
